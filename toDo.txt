@@ -1,0 +1,108 @@
+1) Bill list UI sort by year month
+
+2) filter by give by registration 
+
+3) genrate report for bill give total expenditure
+
+4) report of patients no of male and female    - DONE
+
+5) multiple pcg contacts 
+
+
+6) Error : when i delete a patient from patient list the female no and male no is getting screwed up 
+
+7) when they create bill and say that patient is discharged we need to handle case
+I think we also need to handel the case to store if it was eath or ddischarge not sure 
+have to figure this out by the morning 
+
+8) Multiple pcp contacts 
+
+9) check if we edit name refelected in med2patients
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+19) add bill type to med2patients billing schema  and bill date and user made by
+
+16) Make admin role
+
+17) Only admin should be given in sign up and delete
+
+
+18) we shoul add user id to all changes
+
+
+1) Add moments for diff for age calc      - DONE
+
+2) delete   -DONE for patient 
+
+3) History events
+
+4) pdf - phantomjs - DONE as jpg
+
+5)get data for patient and meds      -  DONE
+
+6) Authentication  - DONE
+
+7) avoid network for cdnjs
+
+8) active tabs in bootstrap nav bar
+
+9) Clean Up
+
+10) Refreshing URL problem 
+
+11) Save button on med2Patient - DONE
+
+12) Remove unwanted files
+
+13) when a patient is created create actualmed2patient record -DONE for add should do for edit
+
+14) Quantity edit on addtoitem page  - done
+
+15) node.exe and npm instaleed on usb drive and code as well
+
+16) make seed as a route which reads a file system json file an seeds the file js insted of import -DONE 
+Clean Up List:
+
+1) rename actualpatients to patients
+
+2) rename actualmedicines to items
+
+3) rename the methode names
+
