@@ -13,7 +13,7 @@ import {AuthService} from "./auth//auth.service";
 								<a class="navbar-brand"><B style="color:#337ab7;font-size:large">{{pageTitle}}</B></a>
 								<ul class="nav navbar-nav" >
                                     <li (click)="makeactive(0)"><a *ngIf="isLoggedIn()"><strong style="font-size:large"><span [style] = "active[0]? 'color:#337ab7' : '' " >Hey</span></strong></a></li>
-                                    <li *ngIf="!isLoggedIn()"><a [routerLink]="['Auth']" >User Management</a></li>                                    									
+                                                                      									
 								</ul>
                                 <ul class="nav navbar-nav navbar-right">
                                     

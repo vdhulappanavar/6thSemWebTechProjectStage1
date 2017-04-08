@@ -10,9 +10,9 @@ import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from "angular2/router"
 import {AuthenticationComponent} from "./auth/authentication.component";
 import {HeaderComponent} from "./header.component";
 
+import {artListComponent} from "./artList/artList.component";
 
-
-
+import{artListService} from "./artList/artList.service";
 
 
 @Component({
@@ -24,16 +24,16 @@ import {HeaderComponent} from "./header.component";
             <router-outlet></router-outlet>
         </div>
     `,
-    directives: [ROUTER_DIRECTIVES, HeaderComponent] ,
-    providers: [ROUTER_PROVIDERS, HTTP_PROVIDERS]
+    directives: [ROUTER_DIRECTIVES, HeaderComponent , artListComponent] ,
+    providers: [ROUTER_PROVIDERS, HTTP_PROVIDERS , artListService]
     
 })
 
 //var test = true;
 //var test1=false;x
-/*@RouteConfig([
-    { path: '/Actualpatients', name: 'Actualpatients', component: ActualpatientComponent , useAsDefault: true }
-])*/
+@RouteConfig([
+    { path: '/ArtList', name: 'ArtListng', component: artListComponent , useAsDefault: true }
+])
 
 export class AppComponent {
    // test = true;
