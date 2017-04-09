@@ -22,26 +22,21 @@ import {AuthService} from "../auth//auth.service";
                   <div *ngIf="artList">
                       <table class="table table-striped">
                             <thead>
-                                      <tr>
-                                          <th>
-                                              <button class='btn btn-primary' (click) = "toggleImage()">
-                                                  {{showImage ? 'Hide' : 'Show'}} Image
-                                              </button>
-                                          </th>
-                                          <th>Reg No</th>
-                                          <th>Patient Name</th>
-                                          <th>Gender</th>
-                                          <th>Age</th>
-                                          <th>DOA</th>                        
-                                          <th></th>         
-                                          <th></th>               
+                                      <tr>                                         
+                                          <th>Artist Name</th>
+                                          <th>Cost</th>
+                                          <th>Art</th> 
+                                          <th></th>                                                                                              
                                       </tr>
                           </thead>
                             
                             <tr *ngFor="#art of artList ">
-                              <td>{{art.artist_name}}</td>
+                              <td>
+                                        {{art.artist_name}}  
+                            </td>
                               <td>{{art.cost}}<td>
                               <td><img width="100" height="100" [src]='art.img_url' /></td>
+                              <td> Add To cart</td>
                             </tr>
                       </table>
                   </div>

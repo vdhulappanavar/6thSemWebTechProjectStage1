@@ -11,7 +11,7 @@ router.get('/static', function(req, res, next) {
       "name": "Luke 123",
       "height": "172",
       "weight": "77",
-      "url": "http://swapi.co/api/actualpatients/1/"
+      "url": "http://swapi.co/api/actualpatients/1/" 
     },
     {
       "name": "C-3PO", 
@@ -45,6 +45,22 @@ router.get('/', function(req, res, next) {
         });
 });
 
+
+router.get('/:id', function(req, res, next) {
+    Artlist.findById(req.params.id)
+        .exec(function(err, docs) {
+            if (err) {
+                return res.status(404).json({
+                    title: 'An error occurred',
+                    error: err
+                });
+            }
+            res.status(200).json({
+                message: 'Success',
+                obj: docs
+            });
+        }); 
+});
 
 
 router.use('/', function(req, res, next) {

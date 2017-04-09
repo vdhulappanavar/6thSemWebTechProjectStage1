@@ -1,0 +1,1 @@
+mongoimport --db artgallery1 --collection artlistss --drop --file ./artInfo_seed.json

@@ -12,7 +12,7 @@ var mongoose = require('mongoose');
 
 
 var appRoutes = require('./routes/app');
-var seedsRoutes = require('./routes/artlist');
+var artlistRoutes = require('./routes/artlist');
 
 
 var app = express();
@@ -57,7 +57,7 @@ app.use(function(req, res, next) {
 
 
 app.use('/', appRoutes);
-app.use('/artList', seedsRoutes);
+app.use('/artList', artlistRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

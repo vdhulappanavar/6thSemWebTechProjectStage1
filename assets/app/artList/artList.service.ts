@@ -11,34 +11,34 @@ export class artListService{
     private baseUrl: string = 'http://localhost:3000';
   //private baseUrl: string = 'http://192.168.1.104:3000';
 
-  med2patient;
+  
   constructor(private http : Http ){}
 
   getAllArtList(): Observable<artInfo[]>{
-    let actualpatients$ = this.http
+    let artlist$ = this.http
       .get(`${this.baseUrl}/artList`)
-      .map(mapActualpatients);
-      return actualpatients$;
+      .map(mapArtlists);
+      return artlist$;
   }
 
 }
 
-function mapActualpatients(response:Response): artInfo[]{
-  console.log("mapActualpatients");
+function mapArtlists(response:Response): artInfo[]{
+  console.log("mapArtlists");
    console.log(response);
-   return response.json().obj.map(toActualpatient)
+   return response.json().obj.map(toArtlist)
 }
 
-function mapActualpatient(response:Response): artInfo{
-  console.log("mapActualpatient");
+function mapArtlist(response:Response): artInfo{
+  console.log("mapArtlist");
   console.log(response);
-   return toActualpatient(response.json().obj);
+   return toArtlist(response.json().obj);
 }
 
-function toActualpatient(r:any): artInfo{
-  console.log("in toActualpatient");
+function toArtlist(r:any): artInfo{
+  console.log("in toArtlist");
   console.log(r);
-  let actualpatient = <artInfo>({
+  let artlist = <artInfo>({
     id : r._id , 
     artist_id : r.artist_id ,     
     name        : r.name,
@@ -46,6 +46,6 @@ function toActualpatient(r:any): artInfo{
     cost      : r.cost,
     img_url         : r.img_url
   });
-  console.log('Parsed actualpatient:', actualpatient);
-  return actualpatient;
+  console.log('Parsed artlist:', artlist);
+  return artlist;
 }
