@@ -1,1 +1,0 @@
-mongoimport --db aniladvantagedb --collection med2patients --drop --file ./med2patients_seed.json

@@ -1,1 +1,0 @@
-mongo < dropallcollections.js

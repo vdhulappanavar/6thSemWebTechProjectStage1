@@ -3,6 +3,7 @@ import { ROUTER_DIRECTIVES } from 'angular2/router';
 import {Response} from 'angular2/http';
 import { artInfo } from './artList';
 import{artListService} from './artList.service';
+import{ArtlistbyartistFilterPipe} from './artlist-filter-byartist.pipe';
 
 import { RouteParams, Router} from 'angular2/router';
 
@@ -14,7 +15,10 @@ import {AuthService} from "../auth//auth.service";
   <div class="panel panel-primary ">
           <div class="panel-heading">
               <div class='row'>
-                  ART        
+                 <div class='col-md-2'><span style='font-size:large'>Art</span></div>
+                 <div class='col-md-3'>
+                    <span style='font-size:large'>Filter by:</span ><input style="color:black" type='text' [(ngModel)]='listFilter'/>
+                </div>        
               </div>
           </div>    
           <div class="panel-body">
@@ -30,7 +34,7 @@ import {AuthService} from "../auth//auth.service";
                                       </tr>
                           </thead>
                             
-                            <tr *ngFor="#art of artList ">
+                            <tr *ngFor="#art of artList | artlistbyartistFilter : listFilter ">
                               <td>
                                         {{art.artist_name}}  
                             </td>
@@ -45,7 +49,8 @@ import {AuthService} from "../auth//auth.service";
     </div>
     
   `,
-  styleUrls: ['html/actualpatients/actualpatients-list.component.css']
+  styleUrls: ['html/actualpatients/actualpatients-list.component.css'],
+  pipes : [ArtlistbyartistFilterPipe]
   
 })
 export class artListComponent implements OnInit{
